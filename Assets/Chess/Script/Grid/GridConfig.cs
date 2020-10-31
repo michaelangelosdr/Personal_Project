@@ -9,8 +9,9 @@ public class GridConfig : ScriptableObject
     [SerializeField] public int GridX = 0;
     [SerializeField] public int GridY = 0;
 
-    [SerializeField] public Color[] boardColors;
 
     [SerializeField] public Grid gridPrefab;
+
+    [SerializeField] public Grid[,] currentGrid;
 }
 

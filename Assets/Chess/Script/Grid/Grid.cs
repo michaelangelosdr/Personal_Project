@@ -7,7 +7,7 @@ public class Grid : MonoBehaviour
     [SerializeField] public MeshRenderer meshRenderer = null;
     [SerializeField] public int X = 0;
     [SerializeField] public int Y = 0;
-    [SerializeField] private Color initialColor;
+    [SerializeField] public Color initialColor;
 
 
     public void SetGrid(int x, int y, Color color)
