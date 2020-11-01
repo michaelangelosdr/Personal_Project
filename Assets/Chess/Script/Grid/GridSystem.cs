@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GridSystem : MonoBehaviour
 {
     [SerializeField] public GridConfig currentConfig = null;
 
 
-    public void CreateGrid()
+    public void CreateGrid(UnityAction<Grid> action)
     {
         
         if (currentConfig == null) return;
@@ -25,8 +26,8 @@ public class GridSystem : MonoBehaviour
             {
                 var grid = Instantiate(currentConfig.gridPrefab, new Vector3(x, 1, y),Quaternion.identity) as Grid;
                 grid.gameObject.name ="grid [X:" + x + "Y:" + y + "]";
-                if (iswhite) grid.SetGrid(x, y, Color.white);
-                else grid.SetGrid(x, y, Color.black);
+                if (iswhite) grid.SetGrid(x, y, Color.white,action);
+                else grid.SetGrid(x, y, Color.black,action);
                 iswhite = !iswhite;
 
                 currentConfig.currentGrid[x, y] = grid;

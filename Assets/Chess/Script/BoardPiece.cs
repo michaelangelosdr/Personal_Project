@@ -56,10 +56,11 @@ public class BoardPiece : MonoBehaviour
 
     public IEnumerator Move(Coordinate targetCoordinate)
     {
+        Debug.Log(CheckMove(targetCoordinate));
        if(CheckMove(targetCoordinate))
         {
             this.transform.position = new Vector3(currentCoordinate.X, 2,currentCoordinate.Y);
-            LeanTween.moveLocal(this.gameObject, new Vector3(currentCoordinate.X, 2, currentCoordinate.Y), MoveTime);
+            LeanTween.moveLocal(this.gameObject, new Vector3(targetCoordinate.X, 2, targetCoordinate.Y), MoveTime);
             yield return new WaitForSeconds(MoveTime);
             currentCoordinate = targetCoordinate;
             movement_coordinates = null;
@@ -73,7 +74,7 @@ public class BoardPiece : MonoBehaviour
 
         foreach (Coordinate c in movement_coordinates)
         {
-            if(targetCoordinate == c) { return true; }
+            if(targetCoordinate.X == c.X && targetCoordinate.Y == c.Y) { return true; }
         }
         return false;
     }

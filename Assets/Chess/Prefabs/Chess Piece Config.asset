@@ -25,11 +25,71 @@ MonoBehaviour:
       type: 3}
     X: 2
     Y: 1
-  - boardPiece: {fileID: 3189674851093885892, guid: 7e1bfe26af47b8947b8018702eb7dd24,
+  - boardPiece: {fileID: 774408368166061081, guid: b24cca3cd39a58e4f928cefa63ccaa82,
       type: 3}
     X: 3
-    Y: 4
+    Y: 1
+  - boardPiece: {fileID: 774408368166061081, guid: b24cca3cd39a58e4f928cefa63ccaa82,
+      type: 3}
+    X: 4
+    Y: 1
+  - boardPiece: {fileID: 774408368166061081, guid: b24cca3cd39a58e4f928cefa63ccaa82,
+      type: 3}
+    X: 5
+    Y: 1
+  - boardPiece: {fileID: 774408368166061081, guid: b24cca3cd39a58e4f928cefa63ccaa82,
+      type: 3}
+    X: 6
+    Y: 1
+  - boardPiece: {fileID: 774408368166061081, guid: b24cca3cd39a58e4f928cefa63ccaa82,
+      type: 3}
+    X: 7
+    Y: 1
+  - boardPiece: {fileID: 3189674851093885892, guid: 7e1bfe26af47b8947b8018702eb7dd24,
+      type: 3}
+    X: 7
+    Y: 0
+  - boardPiece: {fileID: 3189674851093885892, guid: 7e1bfe26af47b8947b8018702eb7dd24,
+      type: 3}
+    X: 0
+    Y: 0
+  - boardPiece: {fileID: 710277544901836896, guid: 4ad330b0ad53f7043b61f87250517acf,
+      type: 3}
+    X: 1
+    Y: 0
+  - boardPiece: {fileID: 710277544901836896, guid: 4ad330b0ad53f7043b61f87250517acf,
+      type: 3}
+    X: 6
+    Y: 0
+  - boardPiece: {fileID: 4965429390097345060, guid: 5f93044566bbab940bfe5669e6b0000c,
+      type: 3}
+    X: 5
+    Y: 0
+  - boardPiece: {fileID: 4965429390097345060, guid: 5f93044566bbab940bfe5669e6b0000c,
+      type: 3}
+    X: 2
+    Y: 0
+  - boardPiece: {fileID: 8013729780434635116, guid: 83fa816c74cb9c841abbea3bef5f7460,
+      type: 3}
+    X: 4
+    Y: 0
+  - boardPiece: {fileID: 4043434785879993102, guid: d3f1a5617e1170c49925f67e874c54f5,
+      type: 3}
+    X: 3
+    Y: 0
   currentGamePieces:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

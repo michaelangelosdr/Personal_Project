@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Grid : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Grid : MonoBehaviour
     [SerializeField] public int Y = 0;
     [SerializeField] public Color initialColor;
 
+    UnityAction<Grid> selectGridAction;
 
     public void SetGrid(int x, int y, Color color)
     {
@@ -17,6 +19,17 @@ public class Grid : MonoBehaviour
         meshRenderer.material.color = color;
         initialColor = color;
     }
+
+    public void SetGrid(int x, int y, Color color, UnityAction<Grid> onGridSelect)
+    {
+        X = x;
+        Y = y;
+        meshRenderer.material.color = color;
+        initialColor = color;
+
+        selectGridAction = onGridSelect;
+    }
+
 
     public void SetColor(Color color)
     {
@@ -27,4 +40,11 @@ public class Grid : MonoBehaviour
     {
         meshRenderer.material.color = color;
     }
+
+
+    private void OnMouseDown()
+    {
+        selectGridAction?.Invoke(this);
+    }
+
 }

@@ -4,7 +4,7 @@ using System;
 
 
 [RequireComponent(typeof(MeshRenderer))]
-public class Rook : BoardPiece, IChessPiece
+public class Queen : BoardPiece, IChessPiece
 {
     private PieceType _ptype;
     public PieceType ptype
@@ -21,12 +21,12 @@ public class Rook : BoardPiece, IChessPiece
         }
     }
 
-   
+
 
     public override void InitializePiece(Color color, Coordinate spawnLoc, Action<BoardPiece> onPieceSelect)
     {
-        pieceName = "Rook";
-        ptype = PieceType.CHESS_ROOK;
+        pieceName = "Queen";
+        ptype = PieceType.CHESS_QUEEN;
         base.InitializePiece(color, spawnLoc, onPieceSelect);
     }
 
@@ -37,6 +37,68 @@ public class Rook : BoardPiece, IChessPiece
         {
             movement_coordinates = new List<Coordinate>();
 
+            int xOfset = currentCoordinate.X - 1;
+            int yOfset = currentCoordinate.Y - 1;
+            #region X+1 Y+1
+            xOfset = currentCoordinate.X + 1;
+            yOfset = currentCoordinate.Y + 1;
+
+            while (xOfset <= 7 && yOfset <= 7)
+            {
+                Coordinate c = new Coordinate();
+                c.X = xOfset++;
+                c.Y = yOfset++;
+
+                movement_coordinates.Add(c);
+            }
+            #endregion
+
+            #region x-1 y+1
+            //x+1 y-1
+            xOfset = currentCoordinate.X + 1;
+            yOfset = currentCoordinate.Y - 1;
+
+            while (xOfset <= 7 && yOfset >= 0)
+            {
+                Coordinate c = new Coordinate();
+                c.X = xOfset++;
+                c.Y = yOfset--;
+
+                movement_coordinates.Add(c);
+            }
+
+            #endregion
+
+            #region X-1 Y -1
+
+            xOfset = currentCoordinate.X - 1;
+            yOfset = currentCoordinate.Y - 1;
+
+            while (xOfset >= 0 && yOfset >= 0)
+            {
+                Coordinate c = new Coordinate();
+                c.X = xOfset--;
+                c.Y = yOfset--;
+
+                movement_coordinates.Add(c);
+            }
+            #endregion
+
+            #region x-1 y+1
+
+            xOfset = currentCoordinate.X - 1;
+            yOfset = currentCoordinate.Y + 1;
+
+            while (xOfset >= 0 && yOfset <= 7)
+            {
+                Coordinate c = new Coordinate();
+                c.X = xOfset--;
+                c.Y = yOfset++;
+
+                movement_coordinates.Add(c);
+            }
+
+            #endregion
 
             #region Up down left right
             for (int forwardOffset = 1; forwardOffset < 8 - currentCoordinate.Y; forwardOffset++)
@@ -48,7 +110,7 @@ public class Rook : BoardPiece, IChessPiece
                 };
                 movement_coordinates.Add(c);
             }
-
+            
             for (int downOffset = 0; downOffset < currentCoordinate.Y; downOffset++)
             {
                 Coordinate c = new Coordinate()
@@ -58,7 +120,7 @@ public class Rook : BoardPiece, IChessPiece
                 };
                 movement_coordinates.Add(c);
             }
-
+            
             for (int rightOffset = 1; rightOffset < 8 - currentCoordinate.X; rightOffset++)
             {
                 Coordinate c = new Coordinate()
@@ -75,9 +137,8 @@ public class Rook : BoardPiece, IChessPiece
 
                 movement_coordinates.Add(c);
             }
-
+            
             #endregion
-
 
         }
 

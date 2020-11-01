@@ -387,3 +387,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSystem: {fileID: 1471073237}
   boardConfig: {fileID: 11400000, guid: a60f1b53c91995a40ba6b830ec031086, type: 2}
+  TEST: 0
